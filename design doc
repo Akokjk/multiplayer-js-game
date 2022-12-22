@@ -1,0 +1,66 @@
+while game_is_running:
+    process_input()
+    update_game_state()
+    render_graphics()
+    sleep()
+
+A variety of weapons: Offer a range of weapons, such as rifles, shotguns, and pistols, each with their own strengths and weaknesses. This allows players to choose the weapon that best fits their playstyle and the situation they are in.
+
+Team-based gameplay: Encourage players to work together as a team by providing incentives for cooperation, such as bonuses for reviving teammates or completing objectives together.
+
+Dynamic maps: Create maps that have a variety of terrain and structures, and include elements that can change during the course of the match, such as destructible cover or dynamic weather.
+
+Classes or loadouts: Allow players to choose from a selection of classes or create their own loadouts, with different abilities and equipment that suit different playstyles.
+
+Customization: Allow players to customize their character's appearance, weapons, and equipment, giving them a sense of ownership and allowing them to express themselves.
+
+Replayability: Include a variety of game modes, such as capture the flag, deathmatch, and objective-based modes, to keep the game fresh and offer something for every player.
+
+Balanced gameplay: Ensure that the game is balanced and fair by carefully designing the mechanics and tuning them through playtesting. This will help prevent any one element from being overpowered and keep the game enjoyable for all players.
+
+
+Here is an example of pseudo code that outlines the steps for handling player input in a multiplayer game:
+
+Copy code
+function handle_input(player_input):
+  # Validate input
+  if input is not valid:
+    return
+
+  # Predict player's intended actions
+  predicted_actions = predict_actions(player_input)
+
+  # Send predicted actions to server
+  send_actions_to_server(predicted_actions)
+
+  # Update local game state based on predicted actions
+  update_game_state(predicted_actions)
+
+
+function on_server_update(server_state):
+  # Check for discrepancies between predicted actions and server state
+  discrepancies = check_for_discrepancies(predicted_actions, server_state)
+
+  # Correct local game state based on server state
+  update_game_state(server_state)
+
+  # Correct future predicted actions based on discrepancies
+  correct_predictions(discrepancies)
+Explanation:
+
+The handle_input() function is called with player input as an argument. It first validates the input to ensure it is in the expected format and meets any other requirements.
+
+The function predicts the player's intended actions based on the input, using a predict_actions() function.
+
+The predicted actions are sent to the server using a send_actions_to_server() function.
+
+The local game state is updated based on the predicted actions using an update_game_state() function.
+
+When the server sends an update to the client, the on_server_update() function is called with the updated server state as an argument.
+
+The function checks for discrepancies between the predicted actions
+
+
+
+
+x and y if they are same then percentage of the screen is
