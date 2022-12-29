@@ -3,5 +3,29 @@
     "body-parser": "^1.20.1",
     "express": "^4.18.2",
     "socket.io": "^4.5.4"
-  }
+  },
+  "name": "push.io",
+  "version": "1.0.0",
+  "description": "A agar.io successor",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akokjk/multiplayer-js-game.git"
+  },
+  "keywords": [
+    "js",
+    "html",
+    "express"
+  ],
+  "author": "Aaron Barack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Akokjk/multiplayer-js-game/issues"
+  },
+  "homepage": "https://github.com/Akokjk/multiplayer-js-game#readme"
 }
