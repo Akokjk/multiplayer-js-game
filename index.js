@@ -37,6 +37,19 @@ io.on('connection', (socket) => {
 
   });
 
+  socket.on('player', function (data) {
+    //console.log("Recieved input data")
+    //console.log("Recieved input; " + data)
+    const arr = JSON.parse(data);
+    //console.log("Recieved input from " + { x: arr.x, y: arr.y, name: arr.name, team: arr.team, firing: arr.firing, acceleration: arr.acceleration, velocity: arr.velocity})
+    players.set(arr.id, { x: arr.x, y: arr.y, name: arr.name, team: arr.team, firing: arr.firing, acceleration: arr.acceleration, velocity: arr.velocity})
+    const pdata = JSON.stringify([...players]);
+    //console.log("Sending updated player data to clients.")
+    setTimeout(() => {  io.emit("players", pdata) }, 0);
+
+  });
+
+
   socket.on('joined', function (data) {
     if(!players.has(data)){
       console.log(data + " doesnt not exist. Creating a new player.");
@@ -52,7 +65,7 @@ io.on('connection', (socket) => {
     io.emit("players", pdata)
   });
   socket.on('disconnect', () => {
-   //console.log('user disconnected');
+   console.log('user disconnected');
  });
 
 
